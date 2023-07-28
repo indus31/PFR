@@ -1,0 +1,187 @@
+/* FONT FAMILY*/
+@font-face{
+    font-family: "badaboom";
+    src:url("/FONT/badaboom_bb/BADABB__.TTF") format("truetype");
+}
+@font-face{
+    font-family: "anime";
+    src:url("/FONT/anime_ace_bb/animeace2bb_tt/animeace2_reg.ttf") format("truetype");
+}
+/*GENERAL*/
+body{
+    background-color:#9BCAF2 ;
+    margin:0;
+}
+h1{
+    font-family: "badaboom";
+    font-size: 48px;
+
+}
+a{
+    font-family: "anime";
+}
+p{
+    font-family: "anime";
+}
+#logo{
+    width:122px;
+    height:122px;
+}
+/*COLORS*/
+.primaryColor{
+    background-color:#9BCAF2 ;
+}
+.secondaryColor{
+    
+    color: #0388A6;
+}
+.bg2{
+    background-color: #0388A6;
+    color:#F2C3A7;
+}
+.tertiaryColor{
+    color : #F2C3A7;
+    text-decoration: none;
+    font-family: "badaboom";
+    font-size: 32px;
+}
+
+/*PAGE CONNECTION*/
+#contentConnection{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:50px;
+}
+.form{
+    gap:15px;
+    
+}
+label{
+    font-family: "anime";
+    margin-right: 25px;
+    font-size: 24px;
+    
+}
+.pass{
+    margin-right: 46px;
+}
+input{
+    width:325px;
+    height:46px;
+}
+.remember{
+    width:625px;
+    
+    margin-left: 46px;
+    display:flex;
+     
+} 
+.checkbox{
+    width:42px;
+    height:39px;
+    
+} 
+.formBouton{
+    gap:50px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+
+} 
+.bouton{
+    width:279px;
+    height: 89px;
+    border-radius: 10px;
+    font-size: 32px;
+    font-family: "badaboom";
+}
+.linkInscription{
+    display : flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+/*PAGE INSCRIPTION*/
+.inscriptionP1{
+    width:54%;
+    display: flex;
+    justify-content: space-between;
+}
+.formInscription{
+    width:70%;
+    height:80%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 50px;
+
+}
+.formDisplay{
+    width:1040px;
+    display:flex;
+    justify-content: space-between;
+}
+.displayVide{
+    margin:30px;
+    display:flex;
+    justify-content: space-between;
+    width:990px;
+}
+/*PAGE PROFIL*/
+header{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+header div{
+    display:flex;
+    
+}
+#headerParti1{
+justify-content: space-between;
+width:65%;
+
+/* gap:50px; */
+}
+#headerParti2{
+    width:35%;
+    flex-direction: row-reverse;
+    gap:50px;
+    margin-right: 20px;
+}
+nav{
+    margin:0;
+    width:552px;
+    height: 90px;
+    background-color: #0388A6;
+    border-radius: 10px;
+    display:flex;
+    justify-content: space-around;
+}
+nav img{
+    width:67px;
+    height:67px;
+    padding:10px;
+}
+.iconSearch{
+    width:48px;
+    height:47px;
+
+}
+#iconSettings{
+    width:42px;
+    height:42px;
+}
+#search{
+    width:197px;
+    height:39px;
+    border-radius: 10px;
+}
