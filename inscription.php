@@ -34,7 +34,7 @@
             <h1 class="secondaryColor">inscription</h1>
             
         </div>
-        <form class="formInscription" method="post" action="inscription.php">
+        <form class="formInscription" method="post" action="connexion.php">
 
             <div class="formDisplay">
                 <label for="name">Nom : </label>
@@ -63,8 +63,8 @@
               <div class="displayVide">
                 <div class="vide"></div>
 
-                <!-- <input class="bg2 bouton" id="envoyer" type="submit" value="envoyer"> -->
-                <button class="bg2 bouton " type="button"><a class="tertiaryColor"href="Profil.html">envoyer</a></button>
+            <input class="bg2 bouton" id="envoyer" type="submit" value="envoyer">
+                <!-- <button class="bg2 bouton " type="button"><a class="tertiaryColor"href="Profil.html">envoyer</a></button> -->
               </div>
               
 
@@ -86,11 +86,11 @@ $conn = null;
 
 
 try{
-
-    $conn = new PDO("mysql:host=$hostName;dbname=$dbName", $userName, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "connexion réussie";
     if(isset($_POST["name"])&&isset($_POST["first_name"])&&isset($_POST["pseudo"])&&isset($_POST["email"])&&isset($_POST["password"])&&isset($_POST["confirm_password"])){
+        $conn = new PDO("mysql:host=$hostName;dbname=$dbName", $userName, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "connexion réussie";
+    
         $name = $_POST["name"];
         $first_name = $_POST["first_name"];
         $pseudo = $_POST["pseudo"];
@@ -98,16 +98,18 @@ try{
         $pass_users = $_POST["password"];
         $confirm_pass = $_POST["confirm_password"];
 
-        $sql = "INSERT INTO users(first_name,name_users,pseudo_users,users_email,pass_users)VALUES(?,?,?,?,?,?)";
+        $sql = "INSERT INTO users(first_name_users,name_users,pseudo_users,email_users,password_users)VALUES(?,?,?,?,?)";
         $req = $conn->prepare($sql);
-        $req->bindParam(1,$name);
-        $req->bindParam(2,$first_name);
+        $req->bindParam(1,$first_name);
+        $req->bindParam(2,$name);
         $req->bindParam(3,$pseudo);
         $req->bindParam(4,$email);
         if($pass_users === $confirm_pass){
+            $pass_users = password_hash($pass_users, PASSWORD_BCRYPT);
             $req->bindParam(5,$pass_users);
         }else{
             echo "les mots de passe ne correspondent pas !";
+            return $pass;
         }
         $req->execute();
         
